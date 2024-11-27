@@ -1,0 +1,41 @@
+@model Game
+<body>
+ <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6">
+                    <img class="card-img-top mb-5 mb-md-0" src="@Model.GameImageName" alt="@Model.GameName" style="object-fit: cover; height: 200px; width: 100%;" />
+                </div>
+                    <div class="col-md-6">
+                        <div class="small mb-1">SKU: BST-498</div>
+                        <h1 class="display-5 fw-bolder">@Model.GameName</h1>
+                        <div class="fs-5 mb-5">
+                            <span>Price :$@Model.GamePrice</span>
+                        </div>
+                        <p class="lead"><strong>Game Description:</strong> @Model.GameDescription</p>
+
+                    <div class="d-flex justify-content-left small text-warning mb-2">
+    @for (int i = 1; i <= 5; i++)
+    {
+        if (i <= @Model.GameRating)
+        {
+            <i class="bi bi-star-fill"></i> <!-- Filled star -->
+        }
+        else
+        {
+            <i class="bi bi-star"></i> 
+        }
+    }
+</div>
+                       <div class="d-flex">
+                    <a class="btn btn-outline-dark flex-shrink-0" asp-controller="Home" asp-action="Index">
+           
+                        Back
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+</body>
